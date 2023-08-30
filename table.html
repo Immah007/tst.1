@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title> Try It Yourself </title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+   <style>
+   table{width: 100%;}
+ /*  font-family: 'Raleway', sans-serif; */
+   th{ background: grey; color: white; padding-left: 3px;}
+    table, th, td {font-family: 'Alata', sans-serif; word-spacing: 4px; font-size: 16px;
+        border: 0px solid black; padding-left: 3px; border-collapse: collapse;
+         text-align: left;
+      }
+     table>tbody>tr:nth-child(odd){background: lightgrey; border: none;}
+     
+     tr:nth-child(3){color: black;}
+     h2{line-height: 1px;}
+   </style>
+</head>
+<body>
+   <div id="demo"></div>
+   
+       <h2 style="font-family: 'Cinzel', sans-serif">Nairobi International School</h2><hr>
+       <span>The Fountain of endless knowledge</span>
+    <table id="table"> 
+     
+       <tr><th colspan="9" style="font-weight: light; text-align: center; color: white; background: grey; border-bottom: 2px solid #114;">- Mid Term 2 Examination Provisional Results -</th></tr>
+       
+       
+     <th> Rank </th>
+     <th> Name </th>
+     <th> Stream </th>
+     <th> Biology </th>
+     <th> Chemistry </th>
+     <th> Physics </th>
+     <th> Math </th>
+     <th> Average </th>
+     <th>Grade</th>
+     <tbody id="tbody">
+        
+      
+
+     </tbody>
+   </table>
+
+   <script>
+      var students = [
+         {name: "John Wick", gender:"male", age: 7, stream: "East", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 57, grade: "A+"},
+         {name: "Travis Wallace", gender:"male", age: 7, stream: "West", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 49, grade: "A+"},
+         {name: "Mercy Nicole", gender:"female", age: 7, stream: "North", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 76, grade: "A+"},
+         {name: "Ian Kevin", gender:"male", age: 7, stream: "South", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 76, grade: "A+"},
+         {name: "Grace Annibal", gender:"female", age: 7, stream: "South", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 65, grade: "A+"},
+         {name: "Mitchelle Joan", gender:"female", age: 7, stream: "West", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 56, grade: "A+"},
+         {name: "Brian Kelly", gender:"male", age: 7, stream: "North", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 44, grade: "A+"},
+         {name: "Edith Nice", gender:"female", age: 7, stream: "East", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 67, grade: "A+"},
+         {name: "Valentine Natasha", gender:"female", age: 7, stream: "South", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 55, grade: "A+"},
+         {name: "Yvonne Ashley", gender:"female", age: 7, stream: "West", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 87, grade: "A+"},
+         {name: "Bravin Jakes", gender:"male", age: 7, stream: "Oeste", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 79, grade: "A+"},
+         {name: "Diana Hurley", gender:"female", age: 7, stream: "West", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 64, grade: "A+"},
+         {name: "Mike Baker", gender:"male", age: 7, stream: "North", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 49, grade: "A+"},
+         {name: "Zacary Covert", gender:"male", age: 7, stream: "South", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 51, grade: "A+"},
+         {name: "Zhang Yang", gender:"male", age: 7, stream: "East", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 57, grade: "A+"},
+         {name: "Gao Zhan", gender:"male", age: 7, stream: "West", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 49, grade: "A+"},
+         {name: "Kim Sawol", gender:"male", age: 7, stream: "North", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 76, grade: "A+"},
+         {name: "Napiln Yeoh", gender:"female", age: 7, stream: "South", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 76, grade: "A+"},
+         {name: "Lee Munghi", gender:"male", age: 7, stream: "East", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 65, grade: "A+"},
+         {name: "Natasha Ghoneim", gender:"female", age: 7, stream: "West", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 56, grade: "A+"},
+         {name: "Travis Collin", gender:"male", age: 7, stream: "North", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 44, grade: "A+"},
+         {name: "Washington Oliver", gender:"male", age: 7, stream: "East", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 67, grade: "A+"},
+         {name: "Kelly Hummingston", gender:"male", age: 7, stream: "South", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 55, grade: "A+"},
+         {name: "Liam Creson", gender:"female", age: 7, stream: "West", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 87, grade: "A+"},
+         {name: "Sally Brilliant", gender:"female", age: 7, stream: "East", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 79, grade: "A+"},
+         {name: "Ashley Bakhita", gender:"female", age: 7, stream: "West", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 64, grade: "A+"},
+         {name: "Nicole Woods", gender:"female", age: 7, stream: "North", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 49, grade: "A+"},
+         {name: "Salome Preetesh", gender:"male", age: 7, stream: "South", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 51, grade: "A+"},
+         {name: "Suthep Kanchanabat", gender:"male", age: 7, stream: "East", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 57, grade: "A+"},
+         {name: "Niranun Chaisongkram", gender:"male", age: 7, stream: "West", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 49, grade: "A+"},
+         {name: "Prasert Chaiwong ", gender:"male", age: 7, stream: "North", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 76, grade: "A+"},
+         {name: "Wichien Anurak ", gender:"male", age: 7, stream: "South", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 76, grade: "A+"},
+         {name: " Chalerway Thamachott", gender:"male", age: 7, stream: "East", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 65, grade: "A+"},
+         {name: " Achara Nopparat", gender:"female", age: 7, stream: "West", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 56, grade: "A+"},
+         {name: " Sirilak Charnensuk", gender:"female", age: 7, stream: "North", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 44, grade: "A+"},
+         {name: "Pimjai Wongthong ", gender:"female", age: 7, stream: "East", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 67, grade: "A+"},
+         {name: " Wanida Thawornwong", gender:"female", age: 7, stream: "South", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 55, grade: "A+"},
+         {name: "Chupappi Munyanyo ", gender:"female", age: 7, stream: "East", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 87, grade: "A+"},
+         {name: "Omondi Felix", gender:"Male", age: 7, stream: "East", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 79, grade: "A+"},
+         {name: "Mutahi Mwaki", gender:"male", age: 7, stream: "West", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 64, grade: "A+"},
+         {name: "Wanjiru Mueni", gender:"female", age: 7, stream: "North", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 49, grade: "A+"},
+         {name: "Auma Kasoi", gender:"female", age: 7, stream: "South", adm: "C03/2021", math: 76, english: 54, biology: 81, chemistry: 88, physics: 84, average: 51, grade: "A+"}
+         
+         
+         
+      ];
+      
+      for(let i=0; i<students.length; i++){
+          students[i].chemistry = Math.floor(Math.random()* (101-35) + 35);
+          students[i].biology = Math.floor(Math.random()* (101-35) + 35);
+          students[i].physics = Math.floor(Math.random()* (101-35) + 35);
+          students[i].math = Math.floor(Math.random()* (101-35) + 35);
+          
+          students[i].average = (students[i].chemistry + students[i].biology + students[i].physics + students[i].math)/4;
+          if(students[i].average<30){
+              students[i].grade ="E";
+          }
+          else if(students[i].average<35){
+              students[i].grade = "D-";
+          }
+          else if(students[i].average <40){
+              students[i].grade = "D";
+          }
+          else if(students[i].average <45){
+              students[i].grade = "D+";
+          }
+          else if(students[i].average <50){
+              students[i].grade = "C-";
+          }
+          else if(students[i].average <55){
+              students[i].grade = "C";
+          }
+          else if(students[i].average<60){
+              students[i].grade ="C+";
+          }
+          else if(students[i].average<65){
+              students[i].grade = "B-";
+          }
+          else if(students[i].average <70){
+              students[i].grade = "B";
+          }
+          else if(students[i].average < 75){
+              students[i].grade ="B+"
+          }
+          else if(students[i].average <80){
+              students[i].grade = "A-"
+          }
+          else if(students[i].average >=80 ){
+              students[i].grade ="A";
+          }
+      } 
+      
+ //     students.name.sort()
+       students.sort(function(a, b) {
+       return b.average - a.average;
+         
+         return a.name - b.name;
+      });
+    let  Rank = 0; Rank++
+
+    //  var Data = [ rank , students[i].name, students[i].stream, students[i].biology, students[i].chemistry, students[i].physics, students[i].math, students[i].average  ];
+
+      /* displaying data */
+      //  rank = 0;
+  /*    for(var i = 0; i < students.length; i++) {
+       // Rank++;
+         document.getElementById("demo").innerHTML += '<p>Rank: ' + Rank + " " + students[i].adm + ' Name: ' + students[i].name + ' Average: ' + students[i].average + " " +students[i].stream +" "+ students[i].math +" "+ students[i].biology + '</p>';
+      }  */
+   let table = document.getElementById("table");
+   let tBody = document.getElementById("tbody");
+  // let tr = table.getElementsByTagName("tr");
+ //  let td = tr[i].getElementsByTagName("td");
+
+    for(var i = 0; i < students.length; i++) {
+
+      let tr = document.createElement("tr");
+      let rank = document.createElement("td")
+          rank.innerText = Rank++;
+      let name = document.createElement("td")
+          name.innerText = students[i].name; 
+          name.style.fontWeight = "bold";
+      let stream = document.createElement("td")
+          stream.innerText = students[i].stream; 
+      let biology = document.createElement("td")
+          biology.innerText = students[i].biology; 
+      let chemistry = document.createElement("td")
+          chemistry.innerText =  students[i].chemistry; 
+      let physics = document.createElement("td")
+          physics.innerText =  students[i].physics; 
+      let math = document.createElement("td")
+          math.innerText = students[i].math; 
+      let grade = document.createElement("td")
+          grade.innerText = students[i].grade; 
+              
+          
+          let avg = ((chemistry.innerText *1  + physics.innerText *1 + biology.innerText*1 + math.innerText*1)/4).toFixed(1);
+          
+      let average = document.createElement("td") 
+          average.innerText = avg; // Math.floor(Math.random()* (87-49) + 49);  //students[i].average; 
+      
+      
+          tr.appendChild(rank);
+          tr.appendChild(name);  
+          tr.appendChild(stream);
+          tr.appendChild(biology);  
+          tr.appendChild(chemistry);
+          tr.appendChild(physics);  
+          tr.appendChild(math);
+          tr.appendChild(average); 
+          tr.appendChild(grade);
+          
+          
+      //    rank.innerText = "data";
+          
+          tBody.appendChild(tr)
+         }
+   //  document.write(td);
+   </script>
+</body>
+</html>
